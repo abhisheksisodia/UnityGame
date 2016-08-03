@@ -4,7 +4,6 @@ public class PlayerCollector : MonoBehaviour
 { 
     public GameObject ExplodeCapsule = null;
     public GameObject ExplodePlayer;
-    public GameObject PlayerObject = null;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -20,17 +19,6 @@ public class PlayerCollector : MonoBehaviour
             }
 
             Destroy(capsule);
-        }
-    }
-
-    void Update()
-    {
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            var player = GameObject.FindGameObjectWithTag("Player");
-            Destroy(player);
-
-            var newCapsule = GameObject.Instantiate(PlayerObject);
         }
     }
 }
