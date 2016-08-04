@@ -20,5 +20,17 @@ public class PlayerCollector : MonoBehaviour
 
             Destroy(capsule);
         }
+        if (capsule.CompareTag("Cube"))
+        {
+            var player = GameObject.FindGameObjectWithTag("Player");
+            if (ExplodePlayer != null)
+            {
+                var explodePlayer = Instantiate(ExplodePlayer);
+                explodePlayer.transform.position = new Vector3(player.transform.position.x, player.transform.position.y - 1, player.transform.position.z);
+
+                Destroy(explodePlayer, 2);
+            }
+            Destroy(player);
+        }
     }
 }
