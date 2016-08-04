@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreateCapsules : MonoBehaviour
+public class CreateDangerousCap : MonoBehaviour
 {
     public GameObject CapsuleObject;
     public int CapsulesCount = 10;
@@ -14,15 +14,6 @@ public class CreateCapsules : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            var allCapsules = GameObject.FindGameObjectsWithTag("Capsule");
-            foreach (var c in allCapsules)
-                Destroy(c);
-
-            var x = GameObject.Find("GameObject");
-            Create();
-        }
     }
 
     private void Create()
@@ -35,11 +26,10 @@ public class CreateCapsules : MonoBehaviour
         for (int i = 0; i < CapsulesCount; i++)
         {
             var newCapsule = GameObject.Instantiate(CapsuleObject);
-            newCapsule.GetComponent<Renderer>().material.color = Color.green;
+            newCapsule.GetComponent<Renderer>().material.color = Color.red;
 
-            var angle = i * (2.0f * Mathf.PI / CapsulesCount);
-            var x = Mathf.Cos(angle) * radius;
-            var z = Mathf.Sin(angle) * radius;
+            var x = Random.Range(-8.0f, 8.0f);
+            var z = Random.Range(-8.0f, 8.0f);
             newCapsule.transform.position = new Vector3(x, 1, z);
         }
     }

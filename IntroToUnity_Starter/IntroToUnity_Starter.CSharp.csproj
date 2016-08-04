@@ -69,6 +69,7 @@
     <Compile Include="Assets\CatchUp\Lab5\CreateCapsules.cs" />
     <Compile Include="Assets\CatchUp\Lab5\PlayerCollector.cs" />
     <Compile Include="Assets\Scripts\CapsuleAnimationController.cs" />
+    <Compile Include="Assets\Scripts\CreateDangerousCap.cs" />
     <Compile Include="Assets\Scripts\CreatePlayer.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
   </ItemGroup>
